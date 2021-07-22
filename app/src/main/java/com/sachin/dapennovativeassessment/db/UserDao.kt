@@ -16,6 +16,6 @@ interface UserDao {
     suspend fun updateUser(user:User)
 
     @Query("SELECT * FROM user_table")
-    fun getAllUsers(): LiveData<List<User>>
+    fun getAllUsers(): List<User>
 
 }
