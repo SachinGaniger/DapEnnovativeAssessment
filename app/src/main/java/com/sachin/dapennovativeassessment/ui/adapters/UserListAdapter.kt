@@ -7,7 +7,7 @@ import com.sachin.dapennovativeassessment.databinding.SingleUserLayoutBinding
 import com.sachin.dapennovativeassessment.db.User
 
 class UserListAdapter(
-    private var users: List<User>,
+    private var users: ArrayList<User>,
     private val clickListener: (User, String) -> Unit
     ): RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
 
@@ -21,7 +21,7 @@ class UserListAdapter(
 
                 btDelete.setOnClickListener {
                     clickListener(user, "delete")
-                    users.drop(position)
+                    users.removeAt(position)
                     notifyItemRemoved(position)
 //                    notifyDataSetChanged()
                 }
